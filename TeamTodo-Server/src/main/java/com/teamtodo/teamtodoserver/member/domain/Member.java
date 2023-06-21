@@ -1,4 +1,8 @@
-package com.teamtodo.member.domain;
+package com.teamtodo.teamtodoserver.member.domain;
+
+import java.time.LocalDateTime;
+
+import com.teamtodo.teamtodoserver.common.domain.BaseEntity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

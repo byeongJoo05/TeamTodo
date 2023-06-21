@@ -1,14 +1,18 @@
-package com.teamtodo.member.service;
+package com.teamtodo.teamtodoserver.member.service;
 
-import com.teamtodo.member.domain.Member;
-import com.teamtodo.member.dto.MemberDTO;
-import com.teamtodo.member.repository.MemberRepository;
+import com.teamtodo.teamtodoserver.member.domain.Member;
+import com.teamtodo.teamtodoserver.member.dto.MemberDTO;
+import com.teamtodo.teamtodoserver.member.repository.MemberRepository;
+
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Log4j2
 public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
@@ -19,7 +23,6 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public Long register(MemberDTO memberDTO) {
         Member member = modelMapper.map(memberDTO, Member.class);
-
         Long mid = memberRepository.save(member).getMid();
 
         return mid;

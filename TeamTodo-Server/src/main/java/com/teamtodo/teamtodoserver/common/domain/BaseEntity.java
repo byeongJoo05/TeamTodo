@@ -1,4 +1,4 @@
-package com.teamtodo.common.domain;
+package com.teamtodo.teamtodoserver.common.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

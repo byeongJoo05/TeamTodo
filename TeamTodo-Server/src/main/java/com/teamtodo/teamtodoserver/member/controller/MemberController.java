@@ -1,7 +1,8 @@
-package com.teamtodo.member.controller;
+package com.teamtodo.teamtodoserver.member.controller;
 
-import com.teamtodo.member.dto.MemberDTO;
-import com.teamtodo.member.service.MemberService;
+import com.teamtodo.teamtodoserver.member.dto.MemberDTO;
+import com.teamtodo.teamtodoserver.member.service.MemberService;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -21,9 +22,14 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/member")
-    public Map<String, Long> register(@Valid @RequestBody MemberDTO memberDTO) {
-        Map<String, Long> mid = new HashMap<>();
+    public Map<String, Long> register(@RequestBody MemberDTO memberDTO) {
+        log.info("hihi");
+        Map<String, Long> resultMap = new HashMap<>();
 
         Long mid = memberService.register(memberDTO);
+
+        resultMap.put("mid", mid);
+
+        return resultMap;
     }
 }
