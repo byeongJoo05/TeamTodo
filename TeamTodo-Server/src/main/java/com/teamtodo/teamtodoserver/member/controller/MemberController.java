@@ -23,7 +23,6 @@ public class MemberController {
 
     @PostMapping("/member")
     public Map<String, Long> register(@RequestBody MemberDTO memberDTO) {
-        log.info("hihi");
         Map<String, Long> resultMap = new HashMap<>();
 
         Long mid = memberService.register(memberDTO);

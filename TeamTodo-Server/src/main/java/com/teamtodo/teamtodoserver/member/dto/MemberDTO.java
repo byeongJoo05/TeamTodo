@@ -23,7 +23,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberDTO {
-    // private Long mid;
+    private Long mid;
+
+    @NotEmpty
+    private String email;
 
     @NotEmpty
     private String name;
@@ -34,9 +37,9 @@ public class MemberDTO {
     @NotEmpty
     private String nickname;
 
-/*    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime regDate;
 
     @JsonIgnore
-    private LocalDateTime modDate;*/
+    private LocalDateTime modDate;
 }
