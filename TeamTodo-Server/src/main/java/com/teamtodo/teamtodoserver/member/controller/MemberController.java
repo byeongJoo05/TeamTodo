@@ -21,7 +21,7 @@ import java.util.Map;
 public class MemberController {
     private final MemberService memberService;
 
-    @PostMapping("/member")
+    @PostMapping("/register")
     public Map<String, Long> register(@RequestBody MemberDTO memberDTO) {
         Map<String, Long> resultMap = new HashMap<>();
 
