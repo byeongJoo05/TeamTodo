@@ -27,4 +27,18 @@ public class MemberServiceImpl implements MemberService{
 
         return mid;
     }
+
+    @Override
+    public Boolean duplicateEmail(String email) {
+        Boolean result = memberRepository.existsMembersByEmail(email);
+
+        return result;
+    }
+
+    @Override
+    public Boolean duplicateNickname(String nickname) {
+        Boolean result = memberRepository.existsMembersByNickname(nickname);
+
+        return result;
+    }
 }
